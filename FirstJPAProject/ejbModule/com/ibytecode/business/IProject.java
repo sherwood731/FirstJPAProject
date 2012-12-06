@@ -10,7 +10,7 @@ import com.ibytecode.entities.Project;
 public interface IProject 
 {
    Project saveProject(Project project);
-   Project findProject(Project project);
+   Project findProject(int pNumber);
    List<Project> retrieveAllProjects();
 
    Project deleteProject(Project project);

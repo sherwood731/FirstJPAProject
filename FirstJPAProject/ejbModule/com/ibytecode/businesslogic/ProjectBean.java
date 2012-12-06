@@ -31,9 +31,10 @@ public class ProjectBean implements IProject
    }
 
    @Override
-   public Project findProject(Project project)
+   public Project findProject(int pNumber)
    {
-      Project p = entityManager.find(Project.class, project.getPnumber());
+      Project p = entityManager.find(Project.class, pNumber);
+      
       return p;
    }
 
@@ -42,8 +43,10 @@ public class ProjectBean implements IProject
    {
 
       String q = "SELECT p from " + Project.class.getName() + " p";
+      
       Query query = entityManager.createQuery(q);
       List<Project> projects = query.getResultList();
+      
       return projects;
    }
 
@@ -62,7 +65,4 @@ public class ProjectBean implements IProject
       
       return project;
    }
-
-
-   
 }
